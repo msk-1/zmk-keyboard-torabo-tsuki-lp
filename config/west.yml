@@ -4,6 +4,10 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
+    - name: yamaryu211
+      url-base: https://github.com/yamaryu211
+    - name: kot149
+      url-base: https://github.com/kot149
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -27,5 +31,13 @@ manifest:
     - name: zmk-feature-non-lipo-battery-management
       remote: sekigon-gonnoc
       revision: main
+    # オートマウスレイヤー（閾値対応、roBaと同じ）
+    - name: zmk-input-processor-temp-layer-threshold
+      remote: yamaryu211
+      revision: main
+    # Layout Shift (JIS配列対応、roBaと同じ)
+    - name: zmk-layout-shift
+      remote: kot149
+      revision: v1
   self:
     path: config
