@@ -15,6 +15,8 @@
 
 #include <zmk/battery.h>
 #include <zmk/behavior.h>
+#include <zmk/event_manager.h>
+#include <zmk/events/position_state_changed.h>
 
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
@@ -61,11 +63,10 @@ static uint8_t battery_level_to_blinks(uint8_t soc) {
     return 1;
 }
 
-static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
-                                     struct zmk_behavior_binding_event event) {
+static void trigger_battery_blink(void) {
     // 表示中の再トリガーは無視する
     if (k_work_delayable_is_pending(&blink_work)) {
-        return ZMK_BEHAVIOR_OPAQUE;
+        return;
     }
 
     uint8_t soc = zmk_battery_state_of_charge();
@@ -73,8 +74,33 @@ static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
     led_on = false;
     LOG_INF("Battery level %d%%, blinking %d times", soc, remaining_blinks);
     k_work_schedule(&blink_work, K_NO_WAIT);
+}
+
+static int on_keymap_binding_pressed(struct zmk_behavior_binding *binding,
+                                     struct zmk_behavior_binding_event event) {
+    trigger_battery_blink();
     return ZMK_BEHAVIOR_OPAQUE;
 }
+
+// ペリフェラル(セントラルでない側)では、指定キー位置の押下をローカルに検知して
+// 自分のLEDを光らせる。セントラル経由のビヘイビア転送に依存しないため、
+// 左右接続が不安定でも自分側の電池残量を確認できる。
+#if IS_ENABLED(CONFIG_ZMK_SPLIT) && !IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL) &&                  \
+    DT_INST_NODE_HAS_PROP(0, peripheral_trigger_position)
+
+static int battery_led_position_listener(const zmk_event_t *eh) {
+    const struct zmk_position_state_changed *ev = as_zmk_position_state_changed(eh);
+    if (ev != NULL && ev->state &&
+        ev->position == DT_INST_PROP(0, peripheral_trigger_position)) {
+        trigger_battery_blink();
+    }
+    return ZMK_EV_EVENT_BUBBLE;
+}
+
+ZMK_LISTENER(behavior_battery_led, battery_led_position_listener);
+ZMK_SUBSCRIPTION(behavior_battery_led, zmk_position_state_changed);
+
+#endif
 
 static int behavior_battery_led_init(const struct device *dev) {
     k_work_init_delayable(&blink_work, blink_work_handler);

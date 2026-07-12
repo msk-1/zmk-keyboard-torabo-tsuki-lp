@@ -19,3 +19,9 @@ properties:
     type: int
     default: 250
     description: LED off duration between blinks in milliseconds
+  peripheral-trigger-position:
+    type: int
+    description: >
+      Key position that triggers the battery indication locally on the
+      peripheral half, without relying on the split connection
+      (matrix transform position of the active physical layout)
