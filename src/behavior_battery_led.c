@@ -23,6 +23,10 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #define LED_NODE DT_PHANDLE(DT_INST(0, zmk_behavior_battery_led), led)
 static const struct gpio_dt_spec led_gpio = GPIO_DT_SPEC_GET(LED_NODE, gpios);
 
+// 点滅タイミング(キーマップのblink-ms/pause-msプロパティで調整可能)
+#define BLINK_ON_MS DT_INST_PROP(0, blink_ms)
+#define BLINK_OFF_MS DT_INST_PROP(0, pause_ms)
+
 static struct k_work_delayable blink_work;
 static uint8_t remaining_blinks;
 static bool led_on;
@@ -31,7 +35,7 @@ static void blink_work_handler(struct k_work *work) {
     if (!led_on && remaining_blinks > 0) {
         gpio_pin_set_dt(&led_gpio, 1);
         led_on = true;
-        k_work_schedule(&blink_work, K_MSEC(CONFIG_ZMK_STATUS_LED_BATTERY_BLINK_MS));
+        k_work_schedule(&blink_work, K_MSEC(BLINK_ON_MS));
     } else {
         gpio_pin_set_dt(&led_gpio, 0);
         if (led_on) {
@@ -39,7 +43,7 @@ static void blink_work_handler(struct k_work *work) {
             remaining_blinks--;
         }
         if (remaining_blinks > 0) {
-            k_work_schedule(&blink_work, K_MSEC(CONFIG_ZMK_STATUS_LED_BATTERY_PAUSE_MS));
+            k_work_schedule(&blink_work, K_MSEC(BLINK_OFF_MS));
         }
     }
 }

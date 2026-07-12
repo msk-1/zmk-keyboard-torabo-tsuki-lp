@@ -331,6 +331,8 @@
             compatible = "zmk,behavior-battery-led";
             #binding-cells = <0>;
             led = <&status_led>;
+            blink-ms = <150>;
+            pause-ms = <250>;
         };
 
         // Keep the original key_press behavior for ZMK core components

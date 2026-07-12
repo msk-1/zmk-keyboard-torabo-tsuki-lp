@@ -11,3 +11,11 @@ properties:
     type: phandle
     required: true
     description: LED node (gpio-leds child) to blink
+  blink-ms:
+    type: int
+    default: 150
+    description: LED on duration per blink in milliseconds
+  pause-ms:
+    type: int
+    default: 250
+    description: LED off duration between blinks in milliseconds
