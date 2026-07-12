@@ -1,0 +1,13 @@
+# バッテリー残量をLEDの点滅回数(1〜5回)で表示するビヘイビア
+
+description: Battery level LED indicator behavior (blinks 1-5 times)
+
+compatible: "zmk,behavior-battery-led"
+
+include: zero_param.yaml
+
+properties:
+  led:
+    type: phandle
+    required: true
+    description: LED node (gpio-leds child) to blink
