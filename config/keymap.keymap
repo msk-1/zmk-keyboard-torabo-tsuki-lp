@@ -54,9 +54,9 @@
             key-positions = <36 50>;
         };
 
-        shift {
-            bindings = <&kp RIGHT_SHIFT>;
-            key-positions = <41 42>;
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <13 14>;
         };
     };
 
