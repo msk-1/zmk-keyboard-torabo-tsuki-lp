@@ -417,8 +417,8 @@
 
         SYMBOL {
             bindings = <
-&kp ESC            &none              &none              &none              &none                                                    &m_caret           &m_amps            &m_star            &kp EQUAL          &kp BACKSLASH
-&m_excl            &m_at              &m_hash            &m_dllr            &m_prcnt                                                 &kp SEMICOLON      &m_lpar            &m_rpar            &kp LEFT_BRACKET   &kp RIGHT_BRACKET
+&m_excl            &m_at              &m_hash            &m_dllr            &m_prcnt                                                 &m_caret           &m_amps            &m_star            &kp EQUAL          &kp BACKSLASH
+&kp ESC            &none              &none              &none              &none                                                    &kp SEMICOLON      &m_lpar            &m_rpar            &kp LEFT_BRACKET   &kp RIGHT_BRACKET
 &kp LEFT_SHIFT     &none              &none              &none              &none              &none              &none              &kp SINGLE_QUOTE   &m_lbrace          &m_rbrace          &m_lt              &m_gt
 &none              &none              &none              &trans             &trans             &trans             &kp DEL            &trans             &none              &none              &none              &none
             >;
@@ -426,8 +426,8 @@
 
         NUM_FN {
             bindings = <
-&trans            &trans            &trans            &trans            &trans                                                &trans            &trans            &trans            &trans            &trans
 &kp N1            &kp N2            &kp N3            &kp N4            &kp N5                                                &kp N6            &kp N7            &kp N8            &kp N9            &kp N0
+&trans            &trans            &trans            &trans            &trans                                                &trans            &trans            &trans            &trans            &trans
 &kp LC(NUMBER_1)  &kp LC(NUMBER_2)  &kp LC(NUMBER_3)  &kp LC(NUMBER_4)  &kp LS(ESCAPE)    &trans            &trans            &trans            &trans            &trans            &trans            &trans
 &trans            &trans            &trans            &trans            &trans            &trans            &kp BACKSPACE     &trans            &trans            &none             &none             &none
             >;
