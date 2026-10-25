@@ -408,10 +408,10 @@
 
         ARROW_FN {
             bindings = <
-&kp F1            &kp F2              &kp F3     &kp F4     &kp F5                   &kp F6          &kp F7          &kp F8        &kp F9           &none
-&kp LEFT_CONTROL  &kp LC(LEFT_SHIFT)  &kp F10    &kp F11    &kp F12                  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none
-&kp LEFT_SHIFT    &kp LEFT_GUI        &m_c_pgup  &m_c_pgdn  &none    &none   &none   &none           &kp HOME        &kp END       &none            &none
-&trans            &trans              &trans     &trans     &trans   &trans  &trans  &trans          &none           &none         &none            &none
+&kp F1            &kp F2              &kp F3     &kp F4     &kp F5                   &kp F6            &kp F7          &kp F8        &kp F9           &none
+&kp LEFT_CONTROL  &kp LC(LEFT_SHIFT)  &kp F10    &kp F11    &kp F12                  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none
+&kp LEFT_SHIFT    &kp LEFT_GUI        &m_c_pgup  &m_c_pgdn  &none    &none   &none   &kp RG(UP_ARROW)  &kp HOME        &kp END       &none            &none
+&trans            &trans              &trans     &trans     &trans   &trans  &trans  &trans            &none           &none         &none            &none
             >;
         };
 
