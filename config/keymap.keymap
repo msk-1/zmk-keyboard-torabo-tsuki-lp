@@ -462,9 +462,9 @@
 
         ALT_LAYER {
             bindings = <
-&trans       &kp LS(TAB)  &trans  &trans  &trans                     &trans  &trans  &trans  &trans  &trans
+&trans       &trans       &trans  &trans  &trans                     &trans  &trans  &trans  &trans  &trans
 &kp ESC      &kp TAB      &trans  &trans  &trans                     &trans  &trans  &trans  &trans  &trans
-&trans       &trans       &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans
+&trans       &kp LS(TAB)  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans
 &trans       &trans       &trans  &trans  &trans  &trans  &kp SPACE  &trans  &trans  &none   &none   &none
             >;
         };
