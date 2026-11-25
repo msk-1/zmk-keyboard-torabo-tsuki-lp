@@ -61,219 +61,6 @@
     };
 
     macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
-
-        // Shifted symbols for Remote Desktop compatibility
-
-        m_excl: m_excl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N1>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_at: m_at {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N2>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_hash: m_hash {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N3>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_dllr: m_dllr {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N4>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_prcnt: m_prcnt {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N5>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_caret: m_caret {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N6>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_amps: m_amps {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N7>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_star: m_star {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N8>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_lpar: m_lpar {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N9>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_rpar: m_rpar {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N0>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_lbrace: m_lbrace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp LBKT>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_rbrace: m_rbrace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp RBKT>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_dqt: m_dqt {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp SQT>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_colon: m_colon {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp SEMICOLON>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_lt: m_lt {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp COMMA>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_gt: m_gt {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp PERIOD>,
-                <&macro_release>,
-                <&kp LSHFT>;
-        };
-
-        m_crlf: m_crlf {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp BACKSLASH &kp R &kp BACKSLASH &kp N>;
-        };
-
-        m_lf: m_lf {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp BACKSLASH &kp N>;
-        };
-
         m_c_pgup: m_c_pgup {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -351,13 +138,6 @@
             label = "LAYOUT_SHIFT_KEY_PRESS";
         };
 
-        tog_ls: toggle_layout_shift {
-            compatible = "zmk,behavior-layout-shift-toggle";
-            #binding-cells = <0>;
-            toggle-mode = "flip";
-            label = "LAYOUT_SHIFT_TOGGLE";
-        };
-
         tog_ls_on: toggle_layout_shift_on {
             compatible = "zmk,behavior-layout-shift-toggle";
             #binding-cells = <0>;
@@ -370,16 +150,6 @@
             #binding-cells = <0>;
             toggle-mode = "off";
             label = "LAYOUT_SHIFT_TOGGLE_OFF";
-        };
-
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            flavor = "hold-preferred";
         };
 
         // Hold: ALT + layer, Tap: key
@@ -417,10 +187,10 @@
 
         SYMBOL {
             bindings = <
-&m_excl         &m_at  &m_hash  &m_dllr  &m_prcnt                   &m_caret          &m_amps    &m_star    &kp EQUAL         &kp BACKSLASH
-&kp ESC         &none  &none    &none    &none                      &kp SEMICOLON     &m_lpar    &m_rpar    &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&kp LEFT_SHIFT  &none  &none    &none    &none     &none   &none    &kp SINGLE_QUOTE  &m_lbrace  &m_rbrace  &m_lt             &m_gt
-&none           &none  &none    &trans   &trans    &trans  &kp DEL  &trans            &none      &none      &none             &none
+&kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT                   &kp CARET         &kp AMPERSAND         &kp ASTERISK           &kp EQUAL         &kp BACKSLASH
+&kp ESC          &none        &none     &none       &none                         &kp SEMICOLON     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp LEFT_SHIFT   &none        &none     &none       &none        &none   &none    &kp SINGLE_QUOTE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LESS_THAN     &kp GREATER_THAN
+&none            &none        &none     &trans      &trans       &trans  &kp DEL  &trans            &none                 &none                  &none             &none
             >;
         };
 
